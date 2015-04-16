@@ -10,7 +10,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('slug', 'get_url')
 
     class Media:
-        js = ('/static/js/ckeditor/ckeditor.js',)
+        js = ('/static/cms/js/ckeditor/ckeditor.js',)
 
 
 class NavigationAdmin(admin.ModelAdmin):

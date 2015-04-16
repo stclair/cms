@@ -23,8 +23,8 @@ class CmsView(DetailView):
 
 
 urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
     url(r'sitemap', 'cms.views.sitemap', name='sitemap'),
     url(r'^(?P<slug>[\w-]+)/$', CmsView.as_view()),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'', CmsView.as_view())
 ]
