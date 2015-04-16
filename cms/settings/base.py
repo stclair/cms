@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cms.context_processor.navigation_model'
             ],
         },
     },
@@ -110,6 +111,6 @@ CACHEOPS_REDIS = {
 }
 
 CACHEOPS = {
-    'cms.navigation': {'ops': 'all', 'timeout': 60 * 60},
+    'cms.navigation': {'ops': ''},
     'cms.article': {'ops': 'all', 'timeout': 60 * 60},
 }

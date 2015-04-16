@@ -1,3 +1,7 @@
+{% load cacheops %}
+
+{% cached_as navigation_model 30 'breadcrumbs' %}
 {% for nav in object.get_breadcrumbs %}
     » <a href="{{ nav.article.get_url }}">{{ nav }}</a>
 {% endfor %}
+{% endcached_as %}

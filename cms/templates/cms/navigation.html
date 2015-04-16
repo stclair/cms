@@ -1,3 +1,6 @@
+{% load cacheops %}
+
+{% cached_as navigation_model 30 'navigation' %}
 <div class="navigation col-md-3">
     <h3>{{ object.get_navigation_header }}</h3>
     <ul class="nav nav-pills nav-stacked">
@@ -18,3 +21,4 @@
     {% endfor %}
     </ul>
 </div>
+{% endcached_as %}
