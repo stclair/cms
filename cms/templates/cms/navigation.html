@@ -2,13 +2,18 @@
     <h3>{{ object.get_navigation_header }}</h3>
     <ul class="nav nav-pills nav-stacked">
     {% for nav in object.get_other_navigation %}
-        <li><a href="{{ nav.article.get_url }}">{{ nav }}</a></li>
         {% if nav.navigation_set.all %}
-            <ul class="sub-navigation">
+        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ nav }} <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="{{ nav.article.get_url }}">{{ nav }}</a></li>
+                <hr>
             {% for subnav in nav.navigation_set.all %}
                 <li><a href="{{ subnav.article.get_url }}">{{ subnav }}</a></li>
             {% endfor %}
             </ul>
+        </li>
+        {% else %}
+            <li><a href="{{ nav.article.get_url }}">{{ nav }}</a></li>
         {% endif %}
     {% endfor %}
     </ul>
