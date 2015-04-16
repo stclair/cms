@@ -16,9 +16,17 @@
 
     <div class="breadcrumbs">{% include "cms/breadcrumbs.html" %}</div>
 
-    {% include "cms/navigation.html" %}
+    <div class="container">
 
-    <div class="article">{% block content %}{% endblock %}</div>
+        <div class="row">
+
+            {% include "cms/navigation.html" %}
+
+            <div class="article col-md-9">{% block content %}{% endblock %}</div>
+
+        </div>
+
+    </div>
 
     <div class="footer">&copy; {% now "Y" %} - <a href="{% url 'sitemap' %}">sitemap</a></div>
 

@@ -6,8 +6,4 @@ body { background-color: #801515 }
 
 .navigation_header {}
 
-.breadcrumbs { padding-top: .5em; font-size: .8em; }
-
-.navigation { float: left }
-
-.article { float: left; padding: 2em; }
+.breadcrumbs { font-size: .8em; }
