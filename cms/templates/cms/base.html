@@ -1,28 +1,27 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>New Virginia, Iowa</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "cms/css/main.css" %}" />
 </head>
 <body>
 
-<div class="main_body">
+<div class="container content">
 
-    <div class="title_area">
-        <div class="nav_headers">{% include "cms/navigation_header.html" %}</div>
-    </div>
+    <h1>Welcome to New Virginia</h1>
+
+    <div class="navigation_header">{% include "cms/navigation_header.html" %}</div>
 
     <div class="breadcrumbs">{% include "cms/breadcrumbs.html" %}</div>
 
     {% include "cms/navigation.html" %}
 
-    <div class="article">
-        {% block content %}{% endblock %}
-    </div>
+    <div class="article">{% block content %}{% endblock %}</div>
 
-    <div class="footer">
-        <a href="{% url 'sitemap' %}">sitemap</a>
-    </div>
+    <div class="footer">&copy; {% now "Y" %} - <a href="{% url 'sitemap' %}">sitemap</a></div>
+
 </div>
 
 </body>

@@ -1,6 +1,6 @@
 <div class="navigation">
     <h3>{{ object.get_navigation_header }}</h3>
-    <ul>
+    <ul class="nav nav-pills nav-stacked">
     {% for nav in object.get_other_navigation %}
         <li><a href="{{ nav.article.get_url }}">{{ nav }}</a></li>
         {% if nav.navigation_set.all %}

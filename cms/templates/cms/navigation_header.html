@@ -1,4 +1,4 @@
-<ul class="navigation_header">
+<ul class="nav nav-pills">
 {% for header in nav_headers %}
     <li><a href="{{ header.get_article.get_url }}" {% ifequal object.navigation_set.all.0.get_top_parent header %}class="active"{% endifequal %}>{{ header }}</a></li>
 {% endfor %}
