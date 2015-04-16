@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cacheops',
     'cms'
 ]
 
@@ -101,3 +102,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CACHEOPS_REDIS = {
+    'host': 'localhost',
+    'port': 6379,
+    'db': 1,
+}
+
+CACHEOPS = {
+    'cms.navigation': {'ops': 'all', 'timeout': 60 * 60},
+    'cms.article': {'ops': 'all', 'timeout': 60 * 60},
+}
