@@ -72,6 +72,3 @@ class Navigation(models.Model):
 
     def __str__(self):
         return self.text
-
-    def Meta(self):
-        ordering = ['order',]

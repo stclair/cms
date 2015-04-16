@@ -19,7 +19,7 @@ class CmsView(DetailView):
         try:
             return super(CmsView, self).get_object()
         except AttributeError:
-            return Navigation.objects.filter().cache(timeout=30)[0].article
+            return Navigation.objects.filter(parent__isnull=True).cache(timeout=30).order_by('order')[0].article
 
 
 urlpatterns = [
